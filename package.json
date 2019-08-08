@@ -1,0 +1,60 @@
+{
+  "name": "website-hu-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url src/_sass/main.scss src/assets/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start-sass": "npm run css-watch",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "bulma-carousel": "^4.0.4",
+    "bulma-pro": "^0.1.8",
+    "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.0",
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "install": "^0.13.0",
+    "node-sass": "^4.12.0",
+    "npm": "^6.10.2",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
