@@ -4,7 +4,10 @@
 ```
 npm install
 ```
-
+### Compiles sass styles
+```
+npm run start-sass
+```
 ### Compiles and hot-reloads for development
 ```
 npm run serve
