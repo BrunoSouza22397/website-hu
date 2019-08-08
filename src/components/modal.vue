@@ -4,8 +4,8 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
                     <div class="modal-header is-size-4">
-                        <h3 class="modal-title" v-html="title"></h3>
-                        <span id="close-button" @click="close()">&times;</span>
+                        <span id="close-button" @click="$emit('close')">&times;</span>
+                        <h3 class="modal-title is-size-3" v-html="title"></h3>
                     </div>
                     <div class="modal-body">
                         <slot>
@@ -19,22 +19,11 @@
 </template>
 
 <script>
-import $ from "jquery"
 
 export default {
     name: "Modal",
     props: {
         title: String
-    },
-    methods: {
-        show() {
-            console.log("foi")
-            $(`#${this.id}`).modal('show')
-        },
-        close() {
-            $(`#${this.id}`).modal('hide')
-            this.$emit('close')
-        }
     }
 }
 </script>
