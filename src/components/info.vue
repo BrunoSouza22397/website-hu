@@ -39,6 +39,7 @@
             </div>
         </modal>
 
+        <!-- PAGINA -->
         <div class="tile info-title">
             <h1 class="title convenio-text">Informações</h1>
         </div>
@@ -70,6 +71,7 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
     name: "Info",

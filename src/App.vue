@@ -29,7 +29,7 @@
                         Informações
                     </a>
                 </router-link>
-                <router-link to="/responsabilidade" class="navbar-item">
+                <router-link to="/responsabilidade-social" class="navbar-item">
                     <a class="navbar-item">
                         Responsabilidade Social
                     </a>
