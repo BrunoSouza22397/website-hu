@@ -8,9 +8,9 @@
                     <th>Função</th>
                 </tr>
             </thead>
-            <tbody v-for="i in vagas[0]">
+            <tbody v-for="i in vagas[0]" :key="i.cod">
                 <tr>
-                    <td><div class="checkbox"><input type="checkbox" @click="setChecked(i.cod, $event)"></div></td>
+                    <td><div class="radio"><input type="radio" v-model="checked" name="vaga" :value="i.cod"></div></td>
                     <td>{{ i.cod }}</td>
                     <td>{{ i.funcao }}</td>
                 </tr>
@@ -30,30 +30,24 @@ export default {
     data() {
         return {
             vagas: [],
-            checked: [],
+            checked: '',
+        }
+    },
+    watch: {
+        checked: function(value) {
+            this.$emit('isChecked', value)
         }
     },
     methods: {
         async getVagas() {
             const snapshot = await fb.vagasCollection.orderBy("cod").get()
             return snapshot.docs.map(doc => doc.data())        
-        },
-        setChecked(cod, event) {
-            if(event.target.checked){
-                this.checked.push(cod)
-            }else{
-                let index = this.checked.indexOf(cod)
-                if(index > -1) {
-                    this.checked.splice(index, 1)
-                }
-            }
         }
     },
     mounted() {
         this.getVagas().then(vaga => {
             this.vagas.push(vaga)
         })
-        console.log(this.vagas)
     }
 }
 </script>
