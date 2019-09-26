@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
 import NotFound from './views/NotFound.vue'
 import News from './views/News.vue'
-import Info from './views/Info.vue'
-import RespSocial from './views/Responsabilidade.vue'
 import Contato from './views/Contato.vue'
+import TrabalheConosco from './views/TrabalheConosco.vue'
 
 Vue.use(Router)
 
@@ -23,30 +21,20 @@ const routes = [
         component: Home
     },
     {
-        path: '/about',
-        name: 'about',
-        component: About
-    },
-    {
         path: "/news",
         name: "news",
         component: News
     },
     {
-        path: "/info",
-        name: "info",
-        component: Info
-    },
-    {
-        path: "/responsabilidade-social",
-        name: "responsabilidade-social",
-        component: RespSocial
-    },
-    {
         path: "/contato",
         name: "contato",
         component: Contato
-    }
+    },
+    {
+        path: "/trabalhe-conosco",
+        name: "trabalhe-conosco",
+        component: TrabalheConosco
+    },
 ]
 
 /**Roteador */
