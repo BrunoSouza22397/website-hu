@@ -8,6 +8,7 @@
             </p>
 
             <form @submit.prevent id="form-cadastro">
+            
                 <h1 class="title">Formulário de Inscrição</h1>
                 <hr>
 
@@ -393,13 +394,16 @@
 
                 <button class="button is-primary" :disabled="disabled" @click="submit">Enviar</button>
                 <label class="label" v-if="disabled"> Selecione uma vaga no quadro abaixo antes de enviar.</label>
+                <div class="box has-background-danger" v-if="erro">
+                    <label class="label" style="color: white" >Erro no preenchimento: {{ aviso }}</label>
+                </div>
 
                 <div class="section has-text-centered">
                     <h1 class="title">Quadro de Vagas</h1>
                     <hr>    
                     <tableVagas :formulario='true' @isChecked="disabled = false; candidatura.vaga = $event"/>
                 </div>
-                
+
             </form>       
         </div>
     </div>
@@ -414,6 +418,8 @@ export default {
     data() {
         return {
             disabled: true,
+            aviso: '',
+            erro: false,
             candidato: {
                 nome: '',
                 nomePai: '',
@@ -483,6 +489,10 @@ export default {
             }
         },
         async submit() {
+            if(this.validateForm() == false) {
+                return
+            }
+
             await fb.candidatosCollection.add(this.candidato).then((docRef) => {
                 console.log("Cadastrado com id: ", docRef.id)
                 this.candidatura.candidato = docRef.id
@@ -496,8 +506,33 @@ export default {
                 console.error("Erro: ", error)
             })
 
-            document.getElementById("form-cadastro")
+            this.$router.push({ name: "cadastrado"})
         },
+        validateForm() {
+            let c = this.candidato
+            if ( this.isEmpty(c.nome, "Nome Completo") == false) { return false }
+            if ( this.isEmpty(c.nomePai, "Nome do Pai") == false) { return false }
+            if ( this.isEmpty(c.nomeMae, "Nome da Mãe") == false) { return false }
+            if ( 
+                this.isEmpty(c.dataNasc.dia, "Dia de Nascimento") == false 
+                || this.isEmpty(c.dataNasc.mes, "Mes de Nascimento") == false 
+                || this.isEmpty(c.dataNasc.ano, "Ano de Nascimento") == false
+            ) { 
+                return false 
+            } else { 
+                this.formatDate(c.dataNasc) 
+            }
+        },
+        isEmpty(field, alias) {
+            if(!field) {
+                this.erro = true
+                this.aviso = "Campo '" + alias + "' vazio."
+                return false
+            }
+        },
+        formatDate(data) {
+            this.candidato.dataNasc = data.dia + "/" + data.mes + "/" + data.ano
+        }
     },
     components: {
         'tableVagas': TableVagas
@@ -511,5 +546,10 @@ export default {
 }
 .checkbox {
     margin: 1rem;
+}
+.box {
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: fit-content;
 }
 </style>
