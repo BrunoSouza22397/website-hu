@@ -7,7 +7,7 @@
             Entraremos em contato com você caso seja selecionado para alguma vaga.
             </p>
 
-            <form @submit.prevent>
+            <form @submit.prevent id="form-cadastro">
                 <h1 class="title">Formulário de Inscrição</h1>
                 <hr>
 
@@ -291,31 +291,31 @@
                     <div class="field-body">
                             <div class="field is-horizontal">
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Fundamental Incompleto" v-model="candidato.escolaridade.nivel">
                                     Ensino Fundamental Incompleto
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Fundamental Completo" v-model="candidato.escolaridade.nivel">
                                     Ensino Fundamental Completo
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Médio Incompleto" v-model="candidato.escolaridade.nivel">
                                     Ensino Médio Incompleto
                                 </label>
                             </div>
 
                             <div class="field is-horizontal">
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Médio Completo" v-model="candidato.escolaridade.nivel">
                                     Ensino Médio Completo
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Superior Incompleto" v-model="candidato.escolaridade.nivel">
                                     Ensino Superior Incompleto
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" id="escolaridade" name="escolaridade" v-model="candidato.escolaridade.nivel">
-                                    Ensino Superior Incompleto
+                                    <input type="radio" id="escolaridade" name="escolaridade" value="Ensino Superior Completo" v-model="candidato.escolaridade.nivel">
+                                    Ensino Superior Completo
                                 </label>
                             </div>
                     </div>
@@ -391,7 +391,7 @@
                     </div>
                 </div>
 
-                <button class="button is-primary" :disabled="disabled">Enviar</button>
+                <button class="button is-primary" :disabled="disabled" @click="submit">Enviar</button>
                 <label class="label" v-if="disabled"> Selecione uma vaga no quadro abaixo antes de enviar.</label>
 
                 <div class="section has-text-centered">
@@ -407,6 +407,7 @@
 
 <script>
 import TableVagas from '@/components/table.vue'
+const fb = require('../firebaseConfig.js')
 
 export default {
     name: "TrabalheConosco",
@@ -414,7 +415,6 @@ export default {
         return {
             disabled: true,
             candidato: {
-                cod: '',
                 nome: '',
                 nomePai: '',
                 nomeMae: '',
@@ -468,6 +468,7 @@ export default {
                 }
             },
             candidatura: {
+                edital: "001/2019",
                 candidato: '',
                 vaga: ''
             }
@@ -480,7 +481,23 @@ export default {
             } else {
                 this.candidato.pcd.isPcd = false
             }
-        }
+        },
+        async submit() {
+            await fb.candidatosCollection.add(this.candidato).then((docRef) => {
+                console.log("Cadastrado com id: ", docRef.id)
+                this.candidatura.candidato = docRef.id
+            }).catch((error) => {
+                console.error("Erro: ", error)
+            })
+
+            fb.editaisCollection.add(this.candidatura).then(function(docRef){
+                console.log("Edital cadastrado", docRef.id)
+            }).catch(function(error){
+                console.error("Erro: ", error)
+            })
+
+            document.getElementById("form-cadastro")
+        },
     },
     components: {
         'tableVagas': TableVagas
