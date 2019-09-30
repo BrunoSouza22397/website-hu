@@ -58,21 +58,21 @@
                     <div class="field-body">
                         <div class="field is-horizontal">
                             <p class="control">
-                                <input class="input" min="1" max="31" type="number" id="diaNasc" v-model="candidato.dataNasc.dia"/>
+                                <input class="input" min="1" max="31" type="number" id="diaNasc" v-model="candidato.dataNasc.dia" placeholder="dia"/>
                             </p>
                             <p class="control">
-                                <input type="number" min="01" max="12" class="input" id="mesNasc" v-model="candidato.dataNasc.mes"/>
+                                <input type="number" min="01" max="12" class="input" id="mesNasc" v-model="candidato.dataNasc.mes" placeholder="mes"/>
                             </p>
                             <p class="control">
-                                <input type="number" min="1939" max="2001" class="input" id="anoNasc" v-model="candidato.dataNasc.ano"/>
-                            </p>
+                                <input type="number" min="1939" max="2001" class="input" id="anoNasc" v-model="candidato.dataNasc.ano" placeholder="ano"/>
+                            </p>    
                         </div>
                         <div class="field is-horizontal">
                             <div class="field-label is-normal">
                                 <label class="label">Idade</label>
                             </div>
                             <p class="control">
-                                <input type="number" min="18" max="80" class="input" id="idade" v-model="candidato.idade"/>
+                                <input type="number" min="18" max="80" class="input" id="idade" v-model="candidato.idade" :disabled="true"/>
                             </p>
                         </div>
                         <div class="field is-horizontal">
@@ -86,7 +86,7 @@
 
                     </div>
                 </div>
-
+                
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                         <label for="" class="label">RG</label>
@@ -104,13 +104,13 @@
                             </div>
                             <div class="field is-horizontal">
                                 <p class="control">
-                                    <input class="input" min="1" max="31" type="number" id="diaEmissao" v-model="candidato.rg.dataEmissao.dia"/>
+                                    <input class="input" min="1" max="31" type="number" id="diaEmissao" v-model="candidato.rg.dataEmissao.dia" placeholder="dia"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="01" max="12" class="input" id="mesEmissao" v-model="candidato.rg.dataEmissao.mes"/>
+                                    <input type="number" min="01" max="12" class="input" id="mesEmissao" v-model="candidato.rg.dataEmissao.mes" placeholder="mes"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissao" v-model="candidato.rg.dataEmissao.ano"/>
+                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissao" v-model="candidato.rg.dataEmissao.ano" placeholder="ano"/>
                                 </p>
                             </div>
                         </div>
@@ -127,6 +127,8 @@
                         </div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
@@ -145,26 +147,29 @@
                             </div>
                             <div class="field-body">
                                 <p class="control">
-                                    <input class="input" min="1" max="31" type="number" id="diaEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.dia"/>
+                                    <input class="input" min="1" max="31" type="number" id="diaEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.dia" placeholder="dia"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="01" max="12" class="input" id="mesEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.mes"/>
+                                    <input type="number" min="01" max="12" class="input" id="mesEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.mes" placeholder="mes"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.ano"/>
+                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.ano" placeholder="ano"/>
                                 </p>
                             </div>
                         </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label for="" class="label">Zona</label>
-                            </div>
-                            <div class="field-body">
-                                <p class="control is-expanded">
-                                    <input type="text" class="input" id="zonaTituloEleitor" v-model="candidato.tituloEleitor.zona">
-                                </p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Zona</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field is-expanded">
+                            <p class="control">
+                                <input type="text" class="input" id="zonaTituloEleitor" v-model="candidato.tituloEleitor.zona">
+                            </p>
                         </div>
 
                         <div class="field is-horizontal">
@@ -172,13 +177,17 @@
                                 <label for="" class="label">Sessão</label>
                             </div>
                             <div class="field-body">
-                                <p class="control is-expanded">
-                                    <input type="text" class="input" id="sessaoTituloEleitor" v-model="candidato.tituloEleitor.sessao">
-                                </p>
+                                <div class="field is-expanded">
+                                    <p class="control">
+                                        <input type="text" class="input" id="sessaoTituloEleitor" v-model="candidato.tituloEleitor.sessao">
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <hr>
 
                 <div class="field is-horizontal">
                     <div class="field-label">
@@ -192,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                         <label for="" class="label">Endereço(Rua, Av.)</label>
@@ -347,12 +356,12 @@
                                 Sim
                             </label>
                             <label class="radio">
-                                <input type="radio" class="input" id="pcd" name="pcd" @click="setPcd('false')">
+                                <input type="radio" class="input" id="pcd" name="pcd" @click="setPcd('false')" checked>
                                 Não
                             </label>
                         </div>
 
-                        <div class="field is-horizontal">
+                        <div class="field is-horizontal" v-if="candidato.pcd.isPcd">
                             <div class="field-label is-normal">
                                 <label class="label">Qual?</label>
                             </div>
@@ -367,7 +376,7 @@
                     </div>
                 </div>
                 
-                <div class="field is-horizontal">
+                <div class="field is-horizontal" v-if="candidato.pcd.isPcd">
                     <div class="field-label is-normal">
                         <label class="label">Nível ou grau da deficiência?</label>
                     </div>
@@ -480,6 +489,19 @@ export default {
             }
         }
     },
+    watch: {
+        "candidato.dataNasc": {
+            deep: true,
+            handler() {
+                if(!this.candidato.dataNasc.dia || !this.candidato.dataNasc.mes || !this.candidato.dataNasc.ano) {
+                    return
+                }
+
+                this.candidato.idade = this.calcIdade(this.candidato.dataNasc)
+            }
+        }
+
+    },
     methods: {
         setPcd(v) {
             if(v == "true") {
@@ -494,15 +516,19 @@ export default {
             }
 
             await fb.candidatosCollection.add(this.candidato).then((docRef) => {
+                // eslint-disable-next-line
                 console.log("Cadastrado com id: ", docRef.id)
                 this.candidatura.candidato = docRef.id
             }).catch((error) => {
+                // eslint-disable-next-line
                 console.error("Erro: ", error)
             })
 
             fb.editaisCollection.add(this.candidatura).then(function(docRef){
+                // eslint-disable-next-line
                 console.log("Edital cadastrado", docRef.id)
             }).catch(function(error){
+                // eslint-disable-next-line
                 console.error("Erro: ", error)
             })
 
@@ -522,6 +548,39 @@ export default {
             } else { 
                 this.formatDate(c.dataNasc) 
             }
+            if ( this.isEmpty(c.cpf, "CPF") == false ) { return false }
+            if ( this.isEmpty(c.rg.registro, "RG") == false ) { return false }
+            if ( 
+                this.isEmpty(c.rg.dataEmissao.dia, "Data de Emissão do RG") == false
+                || this.isEmpty(c.rg.dataEmissao.mes, "Data de Emissão do RG") == false
+                || this.isEmpty(c.rg.dataEmissao.ano, "Data de Emissão do RG") == false
+            ) { 
+                return false 
+            } else {
+                this.formatDate(c.rg.dataEmissao)
+            }
+            if ( this.isEmpty(c.rg.orgaoEmissor, "Órgão Emissor do RG") == false ) { return false }
+            if ( this.isEmpty(c.tituloEleitor.numero,"Título Eleitor") == false ) { return false }
+            if ( this.isEmpty(c.tituloEleitor.dataEmissao.dia,"Data de Emissão do Título de Eleitor") == false
+                || this.isEmpty(c.tituloEleitor.dataEmissao.mes,"Data de Emissão do Título de Eleitor") == false
+                || this.isEmpty(c.tituloEleitor.dataEmissao.ano,"Data de Emissão do Título de Eleitor") == false 
+            ) { 
+                return false 
+            } else {
+                this.formatDate(c.tituloEleitor.dataEmissao)
+            }
+            if ( this.isEmpty(c.tituloEleitor.zona,"Zona do Título de Eleitor") == false ) { return false }
+            if ( this.isEmpty(c.tituloEleitor.sessao,"Sessão do Título de Eleitor") == false ) { return false }
+            if ( this.isEmpty(c.cns,"CNS") == false ) { return false }
+            if ( this.isEmpty(c.endereco.rua,"Rua") == false ) { return false }
+            if ( this.isEmpty(c.endereco.numero,"Número do Endereço") == false ) { return false }
+            if ( this.isEmpty(c.endereco.bairro,"Bairro") == false ) { return false }
+            if ( this.isEmpty(c.endereco.cidade,"Cidade") == false ) { return false }
+            if ( this.isEmpty(c.contato.email,"Email") == false ) { return false }
+            if ( this.isEmpty(c.contato.telefone1,"Telefone Celular") == false ) { return false }
+            if ( this.isEmpty(c.escolaridade.nivel,"Escolaridade") == false ) { return false }
+            
+            //if ( this.isEmpty(,"") == false ) { return false }
         },
         isEmpty(field, alias) {
             if(!field) {
@@ -532,7 +591,22 @@ export default {
         },
         formatDate(data) {
             this.candidato.dataNasc = data.dia + "/" + data.mes + "/" + data.ano
-        }
+        },
+        calcIdade(dataNasc) {
+            let d = new Date
+            let ano_atual = d.getFullYear()
+            let mes_atual = d.getMonth() + 1
+            let dia_atual = d.getDate()
+
+            let idade = ano_atual - dataNasc.ano
+
+            if( mes_atual < dataNasc.mes || mes_atual == dataNasc.mes && dia_atual < dataNasc.dia) {
+                idade--
+            }
+
+            return idade < 0 ? 0 : idade
+
+        },
     },
     components: {
         'tableVagas': TableVagas
