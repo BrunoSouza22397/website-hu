@@ -58,13 +58,13 @@
                     <div class="field-body">
                         <div class="field is-horizontal">
                             <p class="control">
-                                <input class="input" min="1" max="31" type="number" id="diaNasc" v-model="candidato.dataNasc.dia" placeholder="dia"/>
+                                <input class="input" min="1" max="31" type="number" id="diaNasc" v-model="dataNasc.dia" placeholder="dia"/>
                             </p>
                             <p class="control">
-                                <input type="number" min="01" max="12" class="input" id="mesNasc" v-model="candidato.dataNasc.mes" placeholder="mes"/>
+                                <input type="number" min="01" max="12" class="input" id="mesNasc" v-model="dataNasc.mes" placeholder="mes"/>
                             </p>
                             <p class="control">
-                                <input type="number" min="1939" max="2001" class="input" id="anoNasc" v-model="candidato.dataNasc.ano" placeholder="ano"/>
+                                <input type="number" min="1939" max="2001" class="input" id="anoNasc" v-model="dataNasc.ano" placeholder="ano"/>
                             </p>    
                         </div>
                         <div class="field is-horizontal">
@@ -80,7 +80,7 @@
                                 <label class="label">CPF</label>
                             </div>
                             <p class="control">
-                                <input type="text" class="input" id="cpf" v-model="candidato.cpf">
+                                <input type="text" maxlength="14" class="input" id="cpf" v-model="candidato.cpf">
                             </p>
                         </div>   
 
@@ -104,13 +104,13 @@
                             </div>
                             <div class="field is-horizontal">
                                 <p class="control">
-                                    <input class="input" min="1" max="31" type="number" id="diaEmissao" v-model="candidato.rg.dataEmissao.dia" placeholder="dia"/>
+                                    <input class="input" min="1" max="31" type="number" id="diaEmissao" v-model="rg.dia" placeholder="dia"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="01" max="12" class="input" id="mesEmissao" v-model="candidato.rg.dataEmissao.mes" placeholder="mes"/>
+                                    <input type="number" min="01" max="12" class="input" id="mesEmissao" v-model="rg.mes" placeholder="mes"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissao" v-model="candidato.rg.dataEmissao.ano" placeholder="ano"/>
+                                    <input type="number" min="1939" max="2019" class="input" id="anoEmissao" v-model="rg.ano" placeholder="ano"/>
                                 </p>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input type="text" maxlength="2" id="rgUf" class="input" v-model="candidato.rg.orgaoEmissor">
+                                    <input type="text" id="rgUf" class="input" v-model="candidato.rg.orgaoEmissor">
                                 </p>
                             </div>
                         </div>
@@ -147,13 +147,13 @@
                             </div>
                             <div class="field-body">
                                 <p class="control">
-                                    <input class="input" min="1" max="31" type="number" id="diaEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.dia" placeholder="dia"/>
+                                    <input class="input" min="1" max="31" type="number" id="diaEmissaoTituloEleitor" v-model="tituloEleitor.dia" placeholder="dia"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="01" max="12" class="input" id="mesEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.mes" placeholder="mes"/>
+                                    <input type="number" min="01" max="12" class="input" id="mesEmissaoTituloEleitor" v-model="tituloEleitor.mes" placeholder="mes"/>
                                 </p>
                                 <p class="control">
-                                    <input type="number" min="1939" max="2001" class="input" id="anoEmissaoTituloEleitor" v-model="candidato.tituloEleitor.dataEmissao.ano" placeholder="ano"/>
+                                    <input type="number" min="1939" max="2019" class="input" id="anoEmissaoTituloEleitor" v-model="tituloEleitor.ano" placeholder="ano"/>
                                 </p>
                             </div>
                         </div>
@@ -209,7 +209,7 @@
                     <div class="field-body">
                         <div class="field is-expanded">
                             <p class="control">
-                                <input type="text" id="ruaEndereco" class="input" v-model="candidato.endereco.rua">
+                                <input type="text" id="ruaEndereco" class="input" v-model="candidato.endereco.rua" maxlength="100" placeholder="Máx. 100 carácteres">
                             </p>
                         </div>
                         <div class="field is-horizontal">
@@ -219,7 +219,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control">
-                                        <input type="number" id="numEndereco" class="input" v-model="candidato.endereco.numero">
+                                        <input type="text" id="numEndereco" class="input" v-model="candidato.endereco.numero">
                                     </p>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input type="text" class="input" id="bairroEndereco" v-model="candidato.endereco.bairro">
+                                <input type="text" class="input" id="bairroEndereco" v-model="candidato.endereco.bairro" placeholder="Máx. 50 carácteres" maxlength="50">
                             </p>
                         </div>
                         <div class="field is-horizontal">
@@ -272,7 +272,7 @@
                     <div class="field-body">
                         <div class="field is-expanded">
                             <p class="control">
-                                <input type="text" class="input" id="telefone" v-model="candidato.contato.telefone1">
+                                <input type="text" class="input" id="telefone" v-model="candidato.contato.telefone1" placeholder="Ex.: 9 1234 5678">
                             </p>
                         </div>
 
@@ -338,7 +338,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input type="number" class="input" id="registroEnsino" v-model="candidato.escolaridade.registro">
+                                <input type="number" class="input" id="registroEnsino" v-model="candidato.escolaridade.registro" maxlength="50">
                             </p>
                         </div>
                     </div>
@@ -368,7 +368,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control">
-                                        <input type="text" class="input" id="tipoPcd" v-model="candidato.pcd.deficiencia">
+                                        <input type="text" class="input" id="tipoPcd" v-model="candidato.pcd.deficiencia" maxlength="50">
                                     </p>
                                 </div>
                             </div>
@@ -383,7 +383,7 @@
                     <div class="field-body">
                         <div class="field is-expanded">
                             <p class="control">
-                                <input type="text" id="nivelPcd" class="input" v-model="candidato.pcd.nivel">
+                                <input type="text" id="nivelPcd" class="input" v-model="candidato.pcd.nivel" maxlength="15">
                             </p>
                         </div>
                         <div class="field is-horizontal">
@@ -429,33 +429,36 @@ export default {
             disabled: true,
             aviso: '',
             erro: false,
+            dataNasc: {
+                dia: '',
+                mes: '',
+                ano: ''
+            },
+            rg: {
+                dia: '',
+                mes: '',
+                ano: ''
+            },
+            tituloEleitor: {
+                dia: '',
+                mes: '',
+                ano: ''
+            },
             candidato: {
                 nome: '',
                 nomePai: '',
                 nomeMae: '',
-                dataNasc: {
-                    dia: '',
-                    mes: '',
-                    ano: ''
-                },
+                dataNasc: '',
                 idade: '',
                 cpf: '',
                 rg: {
                     registro: '',
-                    dataEmissao: {
-                        dia: '',
-                        mes: '',
-                        ano: ''
-                    },
+                    dataEmissao: '',
                     orgaoEmissor: ''
                 },
                 tituloEleitor: {
                     numero: '',
-                    dataEmissao: {
-                        dia: '',
-                        mes: '',
-                        ano: ''
-                    },
+                    dataEmissao: '',
                     zona: '',
                     sessao: ''
                 },
@@ -490,14 +493,14 @@ export default {
         }
     },
     watch: {
-        "candidato.dataNasc": {
+        "dataNasc": {
             deep: true,
             handler() {
-                if(!this.candidato.dataNasc.dia || !this.candidato.dataNasc.mes || !this.candidato.dataNasc.ano) {
+                if(!this.dataNasc.dia || !this.dataNasc.mes || !this.dataNasc.ano) {
                     return
                 }
 
-                this.candidato.idade = this.calcIdade(this.candidato.dataNasc)
+                this.candidato.idade = this.calcIdade(this.dataNasc)
             }
         }
 
@@ -536,61 +539,213 @@ export default {
         },
         validateForm() {
             let c = this.candidato
-            if ( this.isEmpty(c.nome, "Nome Completo") == false) { return false }
-            if ( this.isEmpty(c.nomePai, "Nome do Pai") == false) { return false }
-            if ( this.isEmpty(c.nomeMae, "Nome da Mãe") == false) { return false }
-            if ( 
-                this.isEmpty(c.dataNasc.dia, "Dia de Nascimento") == false 
-                || this.isEmpty(c.dataNasc.mes, "Mes de Nascimento") == false 
-                || this.isEmpty(c.dataNasc.ano, "Ano de Nascimento") == false
-            ) { 
-                return false 
-            } else { 
-                this.formatDate(c.dataNasc) 
-            }
-            if ( this.isEmpty(c.cpf, "CPF") == false ) { return false }
-            if ( this.isEmpty(c.rg.registro, "RG") == false ) { return false }
-            if ( 
-                this.isEmpty(c.rg.dataEmissao.dia, "Data de Emissão do RG") == false
-                || this.isEmpty(c.rg.dataEmissao.mes, "Data de Emissão do RG") == false
-                || this.isEmpty(c.rg.dataEmissao.ano, "Data de Emissão do RG") == false
-            ) { 
-                return false 
-            } else {
-                this.formatDate(c.rg.dataEmissao)
-            }
-            if ( this.isEmpty(c.rg.orgaoEmissor, "Órgão Emissor do RG") == false ) { return false }
-            if ( this.isEmpty(c.tituloEleitor.numero,"Título Eleitor") == false ) { return false }
-            if ( this.isEmpty(c.tituloEleitor.dataEmissao.dia,"Data de Emissão do Título de Eleitor") == false
-                || this.isEmpty(c.tituloEleitor.dataEmissao.mes,"Data de Emissão do Título de Eleitor") == false
-                || this.isEmpty(c.tituloEleitor.dataEmissao.ano,"Data de Emissão do Título de Eleitor") == false 
-            ) { 
-                return false 
-            } else {
-                this.formatDate(c.tituloEleitor.dataEmissao)
-            }
-            if ( this.isEmpty(c.tituloEleitor.zona,"Zona do Título de Eleitor") == false ) { return false }
-            if ( this.isEmpty(c.tituloEleitor.sessao,"Sessão do Título de Eleitor") == false ) { return false }
-            if ( this.isEmpty(c.cns,"CNS") == false ) { return false }
-            if ( this.isEmpty(c.endereco.rua,"Rua") == false ) { return false }
-            if ( this.isEmpty(c.endereco.numero,"Número do Endereço") == false ) { return false }
-            if ( this.isEmpty(c.endereco.bairro,"Bairro") == false ) { return false }
-            if ( this.isEmpty(c.endereco.cidade,"Cidade") == false ) { return false }
-            if ( this.isEmpty(c.contato.email,"Email") == false ) { return false }
-            if ( this.isEmpty(c.contato.telefone1,"Telefone Celular") == false ) { return false }
-            if ( this.isEmpty(c.escolaridade.nivel,"Escolaridade") == false ) { return false }
+            //eslint-disable-next-line
+            let emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            //eslint-disable-next-line
+            let nomeExp = /^[*+.\\\/#$%!?\)\(\[\]\{\}]+$/
+            //eslint-disable-next-line
+            let diaExp = /^([0-3][0-9])|([1-9])$/
+            //eslint-disable-next-line
+            let mesExp = /^([0][1-9])|([1][0-2])|[1-9]$/
+            //eslint-disable-next-line
+            let anoExp = /^(19|20)[0-9]{2}$/
+            //eslint-disable-next-line
+            let cpfExp = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/
+            //eslint-disable-next-line
+            let rgExp = /^([0-9]{9})|([0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9])$/
+            //eslint-disable-next-line
+            let emissorRgExp = /^[A-z]+([/]?[A-z]+)?$/
+            //eslint-disable-next-line
+            let tituloEleitorExp = /^([0-9]{12})|([0-9]{10}\/[0-9]2)$/
+            //eslint-disable-next-line
+            let tituloZonaExp = /^[0-9]{3}$/
+            //eslint-disable-next-line
+            let tituloSecaoExp = /^[0-9]{4}$/
+            //eslint-disable-next-line
+            let cnsExp = /^[0-9]{16}$/
+            //eslint-disable-next-line
+            let ruaExp = /^.{1,100}$/
+            //eslint-disable-next-line
+            let numExp = /^.{1,50}$/
+            //eslint-disable-next-line
+            let bairroExp = /^.{2,50}$/
+            //eslint-disable-next-line
+            let telExp = /^([0-9]{9}|[0-9]{4,5}(-|\.| )[0-9]{4}|[0-9]{8}|[0-9]{4}(-|\.| )(0-9){4}){1}$/
+            //eslint-disable-next-line
+            let escolaExp = /^(Ensino )(Fundamental |Médio |Superior )(Completo|Incompleto)$/
+            //eslint-disable-next-line
+            let registroExp = /^.{1,50}$/
+            //eslint-disable-next-line
+            let nvlPcdExp = /^.{1,15}$/
+
+            let cidExp = /^[A-z]+[0-9]+$/
             
-            //if ( this.isEmpty(,"") == false ) { return false }
-        },
-        isEmpty(field, alias) {
-            if(!field) {
+            //nomes
+            if ( nomeExp.test(c.nome) || c.nome.length < 2 || c.nome.length > 255 ) { 
                 this.erro = true
-                this.aviso = "Campo '" + alias + "' vazio."
+                this.aviso = "Nome Completo inválido"
+                return false 
+            }
+            if ( nomeExp.test(c.nomePai) || c.nomePai.length < 2 || c.nomePai.length > 255 ) { 
+                this.erro = true
+                this.aviso = "Nome do pai inválido"
+                return false 
+            }
+            if ( nomeExp.test(c.nomeMae) || c.nomeMae.length < 2 || c.nomeMae.length > 255 ) { 
+                this.erro = true
+                this.aviso = "Nome da mãe inválido"    
+                return false 
+            }
+
+            //nascimento
+            if ( 
+                !diaExp.test(this.dataNasc.dia) 
+                || !mesExp.test(this.dataNasc.mes) 
+                || !anoExp.test(this.dataNasc.ano)
+            ) { 
+                this.erro = true
+                this.aviso = "Data de nascimento inválida"
+                return false
+            } else { 
+                this.candidato.dataNasc = this.dataNasc.dia + "/" + this.dataNasc.mes + "/" + this.dataNasc.ano 
+            }
+            
+            //cpf
+            if ( !cpfExp.test(c.cpf) ) {
+                this.erro = true
+                this.aviso = "CPF inválido"
                 return false
             }
-        },
-        formatDate(data) {
-            this.candidato.dataNasc = data.dia + "/" + data.mes + "/" + data.ano
+            
+            //rg
+            if( !rgExp.test(c.rg.registro) ) {
+                this.erro = true
+                this.aviso = "RG inválido"
+                return false
+            }
+            if ( 
+                !diaExp.test(this.rg.dia)
+                || !mesExp.test(this.rg.mes)
+                || !anoExp.test(this.rg.ano)
+            ) { 
+                this.erro = true
+                this.aviso = "Data de expedição do RG inválida"
+                return false 
+            } else {
+                this.candidato.rg.dataEmissao = this.rg.dia + "/" + this.rg.mes + "/" + this.rg.ano
+            }
+            if ( !emissorRgExp.test(c.rg.orgaoEmissor) ) { 
+                this.erro = true
+                this.aviso = "Órgão Emissor do RG inválido"
+                return false 
+            }
+            
+            //titulo de eleitor
+            if ( !tituloEleitorExp.test(c.tituloEleitor.numero) ) { 
+                this.erro = true
+                this.aviso = "Titulo de eleitor inválido"
+                return false 
+            }
+            if ( !diaExp.test(this.tituloEleitor.dia)
+                || !mesExp.test(this.tituloEleitor.mes)
+                || !anoExp.test(this.tituloEleitor.ano)
+            ) {
+                this.erro = true
+                this.aviso = "Data de emissão do título eleitoral inválida"
+                return false
+            } else {
+                this.candidato.tituloEleitor.dataEmissao = this.tituloEleitor.dia + "/" + this.tituloEleitor.mes + "/" + this.tituloEleitor.ano
+            }
+            if ( !tituloZonaExp.test(c.tituloEleitor.zona) ) { 
+                this.erro = true
+                this.aviso = "Zona do título eleitoral inválida."
+                return false
+            }
+            if ( !tituloSecaoExp.test(c.tituloEleitor.sessao) ) { 
+                this.erro = true
+                this.aviso = "Sessão do título eleitoral inválida"
+                return false 
+            }
+
+            //cns
+            if ( !cnsExp.test(c.cns) ) { 
+                this.erro = true
+                this.aviso = "CNS inválido"                
+                return false 
+            }
+
+            //endereço
+            if ( !ruaExp.test(c.endereco.rua) ) { 
+                this.erro = true
+                this.aviso = "Rua inválida"
+                return false
+            }
+            if ( !numExp.test(c.endereco.numero) ) { 
+                this.erro = true
+                this.aviso = "Número do endereço inválido"
+                return false 
+            }
+            if ( nomeExp.test(c.endereco.bairro) || c.endereco.bairro.length > 50 || c.endereco.bairro.length < 1 ) { 
+                this.erro = true
+                this.aviso = "Bairro inválido"
+                return false
+            }
+            if ( nomeExp.test(c.endereco.cidade) || c.endereco.cidade.length > 50 || c.endereco.cidade.length < 1 ) { 
+                this.erro = true
+                this.aviso = "Cidade inválida"
+                return false 
+            }
+
+            //contato
+            if ( !emailExp.test(c.contato.email) ) { 
+                this.erro = true
+                this.aviso = "Campo E-Mail inválido."
+                return false 
+            }
+            if ( !telExp.test(c.contato.telefone1) ) { 
+                this.erro = true
+                this.aviso = "Telefone principal inválido"
+                return false 
+            }
+            if ( !telExp.test(c.contato.telefone2) && c.contato.telefone2 ) {
+                this.erro = true
+                this.aviso = "Telefone secundário inválido"
+                return false
+            }
+
+            //escolaridade
+            if ( !escolaExp.test(c.escolaridade.nivel) ) { 
+                this.erro = true
+                this.aviso = "Escolaridade inválida"
+                return false 
+            }
+            if ( !registroExp.test(c.escolaridade.registro) && c.escolaridade.registro ) {
+                this.erro = true
+                this.aviso = "Registro escolar inválido"
+            }
+
+            //PCD
+            if ( c.pcd.isPcd == null ) {
+                this.erro = true
+                this.aviso = "Opção PCD inválida"
+                return false
+            }
+            if ( !registroExp.test(c.pcd.deficiencia) && c.pcd.isPcd == true) {
+                this.erro = true
+                this.aviso = "Campo deficiência inválido"
+                return false
+            }
+            if ( !nvlPcdExp.test(c.pcd.nivel) && c.pcd.isPcd == true) {
+                this.erro = true
+                this.aviso = "Nível de deficiência inválido"
+                return false
+            }
+            if ( !cidExp.test(c.pcd.cid) && c.pcd.isPcd == true) {
+                this.erro = true
+                this.aviso = "CID inválido"
+                return false
+            }
+            
         },
         calcIdade(dataNasc) {
             let d = new Date

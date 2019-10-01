@@ -23,9 +23,11 @@
                         <a class="navbar-item">
                             Histórico
                         </a>
-                        <a class="navbar-item">
-                            Organograma
-                        </a>
+                        <router-link to="/organograma-hu">
+                            <a class="navbar-item">
+                                Organograma
+                            </a>
+                        </router-link>
                         <a class="navbar-item">
                             Diretoria
                         </a>

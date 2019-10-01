@@ -6,6 +6,7 @@ import News from './views/News.vue'
 import Contato from './views/Contato.vue'
 import TrabalheConosco from './views/TrabalheConosco.vue'
 import Cadastrado from './views/Cadastrado.vue'
+import OrganogramaHU from './views/HU/Organograma.vue'
 
 Vue.use(Router)
 
@@ -40,7 +41,12 @@ const routes = [
         path: "/cadastrado",
         name: "cadastrado",
         component: Cadastrado
-    }
+    },
+    {
+        path: "/organograma-hu",
+        name: "OrganogramaHU",
+        component: OrganogramaHU
+    } 
 ]
 
 /**Roteador */

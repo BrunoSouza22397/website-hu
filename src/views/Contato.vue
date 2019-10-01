@@ -12,56 +12,57 @@
             </div>
             <div class="column is-two-thirds">
                 <div class="form-background">
-                    
-                    <div class="field">
-                        <label class="label">Nome</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="Seu nome...">
-                        </div>
-                    </div>
-                        
-                    <div class="field">
-                        <label class="label">Email</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input" type="email" placeholder="Seu email">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                            <span class="icon is-small is-right">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </span>
-                        </div>
-                    </div>
-                        
-                    <div class="field">
-                        <label class="label">Assunto</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                    <option>Escolha um assunto</option>
-                                    <option>Reclamação</option>
-                                    <option>Sugestão</option>
-                                    <option>Elogio</option>
-                                </select>
+                    <form>
+                        <div class="field">
+                            <label class="label">Nome</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Seu nome...">
                             </div>
                         </div>
-                    </div>
-                        
-                    <div class="field">
-                        <label class="label">Mensagem</label>
-                        <div class="control">
-                            <textarea class="textarea" placeholder="Digite sua mensagem..."></textarea>
+                            
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="Seu email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                        
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button is-link">Enviar</button>
+                            
+                        <div class="field">
+                            <label class="label">Assunto</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select>
+                                        <option>Escolha um assunto</option>
+                                        <option>Reclamação</option>
+                                        <option>Sugestão</option>
+                                        <option>Elogio</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="control">
-                            <button class="button is-text">Limpar</button>
+                            
+                        <div class="field">
+                            <label class="label">Mensagem</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Digite sua mensagem..."></textarea>
+                            </div>
                         </div>
-                    </div>
+                            
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" type="submit">Enviar</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-text" type="reset">Limpar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
