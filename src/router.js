@@ -7,6 +7,8 @@ import Contato from './views/Contato.vue'
 import TrabalheConosco from './views/TrabalheConosco.vue'
 import Cadastrado from './views/Cadastrado.vue'
 import OrganogramaHU from './views/HU/Organograma.vue'
+import OrganogramaHPSC from './views/HPSC/Organograma.vue'
+import HistoricoHPSC from './views/HPSC/Historico.vue'
 
 Vue.use(Router)
 
@@ -46,7 +48,17 @@ const routes = [
         path: "/organograma-hu",
         name: "OrganogramaHU",
         component: OrganogramaHU
-    } 
+    },
+    {
+        path: "/organograma-hpsc",
+        name: "OrganogramaHPSC",
+        component: OrganogramaHPSC
+    },
+    {
+        path: "/historico-hpsc",
+        name: "HistoricoHPSC",
+        component: HistoricoHPSC
+    }
 ]
 
 /**Roteador */

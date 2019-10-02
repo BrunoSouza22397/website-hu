@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: "OrganogramaHU"
+    name: "OrganogramaHPSC"
 }
 </script>
 

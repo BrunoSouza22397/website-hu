@@ -13,3 +13,9 @@ export default {
     name: "news"
 }
 </script>
+
+<style lang="scss" scoped>
+img {
+    box-shadow: none;
+}
+</style>

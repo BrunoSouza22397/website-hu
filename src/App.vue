@@ -14,6 +14,7 @@
             </div>
             <div class="navbar-menu">
                 <div class="navbar-start">
+                    <!--HU-->
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         HU
@@ -45,18 +46,23 @@
                         </a>
                     </div>
                 </div>
+                    <!--HPSC-->
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         HPSC
                     </a>
 
                     <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item">
-                            Histórico
-                        </a>
-                        <a class="navbar-item">
-                            Organograma
-                        </a>
+                        <router-link to="/historico-hpsc">
+                            <a class="navbar-item">
+                                Histórico
+                            </a>
+                        </router-link>
+                        <router-link to="/organograma-hpsc">
+                            <a class="navbar-item">
+                                Organograma
+                            </a>
+                        </router-link>
                         <a class="navbar-item">
                             Diretoria
                         </a>
@@ -74,6 +80,7 @@
                         </a>
                     </div>
                 </div>
+
                 <router-link to="/news" class="navbar-item">
                     <a class="navbar-item">
                         Notícias
