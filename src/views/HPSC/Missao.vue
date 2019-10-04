@@ -1,14 +1,14 @@
 <template>
     <div class="section">
         <div class="container">
-            <img src="../../assets/img/organogramaHU.png">
+            <img src="../../assets/img/valores.png">
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "OrganogramaHU"
+    name: "missaoHPSC"
 }
 </script>
 

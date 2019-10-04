@@ -6,8 +6,11 @@
                     <p class="title is-size-6 is-marginless has-text-white-ter">Reclamações, Sugestões e Elogios</p>
                     <p class="title is-size-6 is-marginless has-text-white-ter">preencha o formulário ao lado:</p>
                     <br>
-                    <p class="title is-size-6 is-marginless has-text-white-ter">Central de Atendimento:</p>
+                    <p class="title is-size-6 is-marginless has-text-white-ter">Central de Atendimento HU:</p>
                     <p class="is-size-6">(51)3476-8100</p>
+                    <br>
+                    <p class="title is-size-6 is-marginless has-text-white-ter">Central de Atendimento HPSC:</p>
+                    <p class="is-size-6">(51)3476-4507</p>
                 </div>
             </div>
             <div class="column is-two-thirds">

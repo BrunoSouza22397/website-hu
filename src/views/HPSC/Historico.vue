@@ -1,11 +1,11 @@
 <template>
     <div class="section">
         <div class="container has-text-centered">
-            <h1 class="title is-size-1">Hospital de Pronto Socorro de Canoas</h1>
-            <h1 class="title is-size-1">Deputado Nelson Marquezan</h1>
+            <h1 class="title is-size-2">Hospital de Pronto Socorro de Canoas</h1>
+            <h1 class="title is-size-2">Deputado Nelson Marquezan</h1>
             <br>
 
-            <div class="is-size-4">
+            <div class="is-size-5">
                 <p>
                     Inaugurado em 19 de dezembro de 2005, o Hospital Pronto Socorro
                     de Canoas Deputado Nelson Marchezan constitui-se em hospital especializado
@@ -60,3 +60,10 @@ export default {
     name: "HistoricoHPSC"
 }
 </script>
+
+<style lang="scss" scoped>
+p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+</style>
