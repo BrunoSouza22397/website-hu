@@ -12,6 +12,9 @@
             <p class="has-text-weight-bold is-size-4">Diretor Financeiro</p>
             <p class="is-size-5">Valdenir da Silveira Gomes</p>
             <br>
+            <p class="has-text-weight-bold is-size-4">Diretor de Recursos Humanos</p>
+            <p class="is-size-5">Francisco Carlos Silva</p>
+            <br>
             <p class="has-text-weight-bold is-size-4">Diretor de Infraestrutura</p>
             <p class="is-size-5">Leandro Becker</p>
             <br>

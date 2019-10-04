@@ -26,6 +26,7 @@
             <h1 class="title">Últimas Notícias</h1>
            
            <div class="container columns">
+                
                 <div class="card column is-4">
                     <div class="card-header">
                         <p class="card-header-title is-size-4">Está aberto o processo seletivo de 2019!</p>
@@ -33,11 +34,49 @@
                     <div class="card-content">
                         <div class="content">
                             <p class="is-size-5">Para mais Informações leia o <a href="../assets/procSel.docx" download>EDITAL</a>.</p>
-                            <p class="is-size-5"><router-link to="/trabalhe-conosco">Clique aqui</router-link> para se inscrever.</p>
+                            <p class="is-size-5"><router-link to="/processo-seletivo">Clique aqui</router-link> para se inscrever.</p>
                         </div>
-
                     </div>
+                </div>
 
+                <div class="card column is-4">
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="../assets/img/calendario.jpg" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">Calendário Nacional de Vacinação</p>
+                            </div>
+                        </div><!--Fecha media-->
+                        <div class="content">
+                            Calendario de vacinação oficial de acordo com ministério da saúde.
+                            <br>
+                            <time datetime="2019-7-9" class="has-text-weight-semibold">11:09 - 9 Jul 2019</time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card column is-4">
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="../assets/img/hospcanoas.jpg" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">Hospitais de Canoas receberão 4 mil itens de roupas de cama</p>
+                            </div>
+                        </div><!--Fecha media-->
+                        <div class="content">
+                            Pacientes que necessitarem de atendimento nos hospitais de Pronto Socorro de Canoas (HPSC) e Universitário (HU) irão perceber, já a partir dos próximos dias, melhorias nas acomodações.
+                            <br>
+                            <time datetime="2019-7-9" class="has-text-weight-semibold">11:09 - 9 Jul 2019</time>
+                        </div>
+                    </div>
                 </div>
 
             </div>

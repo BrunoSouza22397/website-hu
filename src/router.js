@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import NotFound from './views/NotFound.vue'
 import News from './views/News.vue'
 import Contato from './views/Contato.vue'
-import TrabalheConosco from './views/TrabalheConosco.vue'
+import ProcessoSeletivo from './views/ProcessoSeletivo.vue'
 import Cadastrado from './views/Cadastrado.vue'
 import OrganogramaHU from './views/HU/Organograma.vue'
 import OrganogramaHPSC from './views/HPSC/Organograma.vue'
@@ -16,6 +16,7 @@ import UnidadesHU from './views/HU/Unidades.vue'
 import DiretoriaHU from './views/HU/Diretoria.vue'
 import DiretoriaHPSC from './views/HPSC/Diretoria.vue'
 import HistoricoHU from './views/HU/Historico.vue'
+import TrabalheConosco from './views/TrabalheConosco.vue'
 
 Vue.use(Router)
 
@@ -42,9 +43,9 @@ const routes = [
         component: Contato
     },
     {
-        path: "/trabalhe-conosco",
-        name: "trabalhe-conosco",
-        component: TrabalheConosco
+        path: "/processo-seletivo",
+        name: "processo-seletivo",
+        component: ProcessoSeletivo
     },
     {
         path: "/cadastrado",
@@ -100,6 +101,11 @@ const routes = [
         path: "/historico-hu",
         name: "HistoricoHU",
         component: HistoricoHU
+    },
+    {
+        path: "/trabalhe-conosco",
+        name: "TrabalheConosco",
+        component: TrabalheConosco
     }
 ]
 

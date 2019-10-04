@@ -17,7 +17,7 @@
                     <!--HU-->
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            <img src="./assets/img/hu_logo.png" id="logotipo">
+                            <img src="./assets/img/hu_logo.png" id="logotipoHU">
                         </a>
 
                         <div class="navbar-dropdown is-boxed">
@@ -36,9 +36,6 @@
                                     Diretoria
                                 </a>
                             </router-link>
-                            <a class="navbar-item">
-                                Conselhos
-                            </a>
                             <router-link to="/missao-hu">
                                 <a class="navbar-item">
                                     Missão, visão política e objetivo
@@ -49,15 +46,12 @@
                                     Unidades
                                 </a>
                             </router-link>
-                            <a class="navbar-item">
-                                Setores
-                            </a>
                         </div>
                     </div>
                     <!--HPSC-->
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            <img src="./assets/img/logoHPSC.png" id="logotipo">
+                            <img src="./assets/img/logoHPSC.png" id="logotipoHPSC">
                         </a>
 
                         <div class="navbar-dropdown is-boxed">
@@ -76,20 +70,11 @@
                                     Diretoria
                                 </a>
                             </router-link>
-                            <a class="navbar-item">
-                                Conselhos
-                            </a>
                             <router-link to="/missao-hpsc">
                                 <a class="navbar-item">
                                     Missão, visão política e objetivo
                                 </a>
                             </router-link>
-                            <a class="navbar-item">
-                                Unidades
-                            </a>
-                            <a class="navbar-item">
-                                Setores
-                            </a>
                         </div>
                     </div>
 
@@ -112,17 +97,25 @@
                             <a class="navbar-item">
                                 Fornecedores
                             </a>
-                            <a class="navbar-item">
-                                <router-link to="/contato">
+                            <router-link to="/contato">
+                                <a class="navbar-item">
                                     Ouvidoria
-                                </router-link>
-                            </a>
+                                </a>
+                            </router-link>
+
                             <hr class="navbar-divider">
-                            <a class="navbar-item">
-                                <router-link to="/trabalhe-conosco">
+                            <router-link to="/processo-seletivo">
+                                <a class="navbar-item">
+                                    Processo Seletivo
+                                </a>
+                            </router-link>
+
+                            <router-link to="/trabalhe-conosco">
+                                <a class="navbar-item">
                                     Trabalhe Conosco
-                                </router-link>
-                            </a>
+                                </a>
+                            </router-link>
+                        
                         </div>
                     </div>
 
@@ -174,9 +167,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#logotipo {
+#logotipoHU {
    box-shadow: none; 
    max-height: 4rem;
+}
+#logotipoHPSC {
+    box-shadow: none; 
+    max-height: 3rem;
 }
 .footer p {
     color: white;
