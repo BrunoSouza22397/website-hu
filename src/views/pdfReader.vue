@@ -1,10 +1,10 @@
 <template>
-    <object data="../../procSel.pdf" type="application/pdf"></object>
+    <div class="has-text-centered">
+        <object data="../../procSel.pdf" type="application/pdf"></object>
+    </div>
 </template>
 
 <script>
-import PDFJS from "../../node_modules/pdfjs-dist/build/pdf.js"
-
 export default {
     name: "PDFReader"
 }
@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 object {
-    width: 100%;
-    min-height: 0rem;
+    min-width: 60rem;
+    min-height: 50rem;
 }
 </style>
