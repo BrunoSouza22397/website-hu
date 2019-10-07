@@ -15,6 +15,9 @@
                 <div class='has-background'>
                     <img class="is-background" src="../assets/img/hpsc.jpg" alt="imagem 4" />
                 </div>
+                <div class='has-background'>
+                    <img class="is-background" src="../assets/img/hpsc2.jpg" alt="imagem 5" />
+                </div>
             </div>
             <div class="hero-head"></div>
             <div class="hero-body"></div>

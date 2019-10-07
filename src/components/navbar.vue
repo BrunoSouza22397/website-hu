@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                <router-link to="/pdf-reader?document=edital" class="navbar-item">
+                <Router-link to="/pdf-reader" class="navbar-item">
                     <a class="navbar-item">
                         Edital Processo Seletivo
                     </a>
