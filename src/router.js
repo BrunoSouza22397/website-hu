@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+//Views
 import Home from './views/Home.vue'
 import NotFound from './views/NotFound.vue'
 import News from './views/News.vue'
@@ -17,6 +19,7 @@ import DiretoriaHU from './views/HU/Diretoria.vue'
 import DiretoriaHPSC from './views/HPSC/Diretoria.vue'
 import HistoricoHU from './views/HU/Historico.vue'
 import TrabalheConosco from './views/TrabalheConosco.vue'
+import PDFReader from './views/pdfReader.vue'
 
 Vue.use(Router)
 
@@ -106,6 +109,11 @@ const routes = [
         path: "/trabalhe-conosco",
         name: "TrabalheConosco",
         component: TrabalheConosco
+    },
+    {
+        path: "/pdf-reader",
+        name: "PDFReader",
+        component: PDFReader
     }
 ]
 

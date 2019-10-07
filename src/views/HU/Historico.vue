@@ -1,10 +1,10 @@
 <template>
     <div class="section">
         <div class="container has-text-centered">
-            <h1 class="title is-size-2">Hospital Universitário de Canoas</h1>
+            <h1 class="title">Hospital Universitário de Canoas</h1>
             <br>
 
-            <div class="is-size-5">
+            <div>
                 <p>
                     Fundado pela Universidade Luterana do Brasil – ULBRA, o Hospital
                     Universitário – HU teve início de suas primeiras atividades em 2004. Porém
@@ -111,6 +111,9 @@ export default {
 p {
     text-align: justify;
     margin-bottom: 1rem;
+}
+.title {
+    font-size: 1.3em;
 }
 ul {
     list-style-type: disc;
