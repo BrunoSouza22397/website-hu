@@ -1,0 +1,23 @@
+{
+    "name": "bruno.souza/website-hu-vue",
+    "description": "site para o hu",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "hu-ti",
+            "email": "bruno.souza@hucanoas.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "HUCanoas": "src/",
+            "HUCanoas\\Entity": "src/Entity/",
+            "HUCanoas\\Model": "src/Model/"
+        }
+    }
+}

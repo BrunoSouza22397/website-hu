@@ -15,12 +15,13 @@
             </div>
             <div class="column is-two-thirds">
                 <div class="form-background">
-                    <form @submit.prevent>
+                    <form @submit.prevent="submit">
                         <div class="field">
                             <label class="label">Nome</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="Seu nome..." v-model="mensagem.nome"/>
                             </div>
+                            <div v-if="errors && errors.name" class="has-text-danger">{{ errors.name[0] }}</div>
                         </div>
                             
                         <div class="field">
@@ -30,10 +31,11 @@
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
-                                <span class="icon is-small is-right">
+                                <span class="icon is-small is-right has-text-danger" v-if="errors && errors.email">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
                             </div>
+                            <div class="has-text-danger" v-if="errors && errors.email">{{ errors.email[0] }}</div>
                         </div>
                             
                         <div class="field">
@@ -48,6 +50,7 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="has-text-danger" v-if="errors && errors.topic">{{ errors.topic[0] }}</div>
                         </div>
                             
                         <div class="field">
@@ -55,6 +58,7 @@
                             <div class="control">
                                 <textarea class="textarea" placeholder="Digite sua mensagem..." v-model="mensagem.conteudo"></textarea>
                             </div>
+                            <div class="has-text-danger" v-if="errors && errors.message">{{ errors.message[0] }}</div>
                         </div>
                             
                         <div class="field is-grouped">
@@ -62,10 +66,11 @@
                                 <button class="button is-link" type="submit">Enviar</button>
                             </div>
                             <div class="control">
-                                <button class="button is-text" type="reset">Limpar</button>
+                                <button class="button is-text" type="reset" @click="limpar">Limpar</button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -73,6 +78,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: "Contato",
     data() {
@@ -82,11 +89,28 @@ export default {
                 email: '',
                 assunto: '',
                 conteudo: ''
-            }
+            },
+            errors: {},
         }
     },
     methods: {
-
+        submit() {
+            this.errors = {}
+            axios.post('/send', this.mensagem).then(response => {
+                alert("Mensagem enviada!")
+            }).catch(error => {
+                if (error.response.status === 442) {
+                    this.errors = error.response.data.errors || {}
+                }
+            })
+        },
+        limpar() {
+            this.mensagem.nome = ''
+            this.mensagem.email = ''
+            this.mensagem.assunto = ''
+            this.mensagem.conteudo = ''
+            this.errors = {}
+        }
     }
 }
 </script>
