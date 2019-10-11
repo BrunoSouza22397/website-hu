@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "phpmailer/phpmailer": "dev-master"
+        "phpmailer/phpmailer": "dev-master",
+        "slim/slim": "3.x-dev"
     },
     "autoload": {
         "psr-0": {

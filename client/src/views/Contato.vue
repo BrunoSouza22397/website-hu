@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import httpClient from '@/shared/http-client.js'
 
 export default {
     name: "Contato",
@@ -96,7 +96,7 @@ export default {
     methods: {
         submit() {
             this.errors = {}
-            axios.post('/send', this.mensagem).then(response => {
+            httpClient.post('/send', this.mensagem).then(response => {
                 alert("Mensagem enviada!")
             }).catch(error => {
                 if (error.response.status === 442) {

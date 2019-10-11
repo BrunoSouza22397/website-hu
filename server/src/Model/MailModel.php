@@ -3,7 +3,7 @@ namespace HUCanoas\Model;
 
 use HUCanoas\Entity\Mail;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\EXception;
+use PHPMailer\PHPMailer\Exception;
 
 require '../../vendor/autoload.php';
 
@@ -11,10 +11,11 @@ require '../../vendor/autoload.php';
 class MailModel
 {
     private $entity;
-    private $_mail = new PHPMailer(true);
+    private $_mail;
 
     public function __construct($senderName, $senderEmail, $topic, $body) {
         $this->entity = new Mail($senderName, $senderEmail, $topic, $body);
+        $this->_mail = new PHPMailer(true);
     }
 
     public function sendMail() {
@@ -46,6 +47,7 @@ class MailModel
     private function configureMailer() {
         $mail->SMTPDebug = 4;                                   // Enable verbose debug output 
         $mail->isSMTP();                                        // Send using SMTP
+        $mail->setLanguage('pt_br');
         $mail->Host       = 'smtp.gmail.com';                   // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                               // Enable SMTP authentication
         $mail->Username   = 'bruno.souza@hucanoas.com.br';      // SMTP username
