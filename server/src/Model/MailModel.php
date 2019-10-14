@@ -5,9 +5,6 @@ use HUCanoas\Entity\Mail;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../vendor/autoload.php';
-
-
 class MailModel
 {
     private $entity;

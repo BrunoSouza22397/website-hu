@@ -11,8 +11,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "slim/slim": "4.x-dev",
+        "symfony/yaml": "^5.0@dev",
         "phpmailer/phpmailer": "dev-master",
-        "slim/slim": "3.x-dev"
+        "slim/psr7": "dev-master"
     },
     "autoload": {
         "psr-0": {

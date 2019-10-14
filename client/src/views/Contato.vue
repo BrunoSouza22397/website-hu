@@ -96,9 +96,7 @@ export default {
     methods: {
         submit() {
             this.errors = {}
-            httpClient.post('/send', this.mensagem).then(response => {
-                alert("Mensagem enviada!")
-            }).catch(error => {
+            httpClient.post('/send', this.mensagem).catch(error => {
                 if (error.response.status === 442) {
                     this.errors = error.response.data.errors || {}
                 }
