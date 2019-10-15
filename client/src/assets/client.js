@@ -1,7 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
 
-/** Default config for axios instance */
-let config = {
+const client = axios.create({
     baseURL: `http://${window.location.hostname}:3001/`,
     withCredentials: false,
     headers: {
@@ -9,9 +8,6 @@ let config = {
         'Accept': 'application/json',
         'Content-type': 'application/json'
     },
-};
+})
 
-/** Creating the instance for axios */
-const httpClient = axios.create(config);
-
-export default httpClient;
+export default client

@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import httpClient from '@/shared/http-client.js'
+import service from '@/services/mail.js'
 
 export default {
     name: "Contato",
@@ -96,11 +96,7 @@ export default {
     methods: {
         submit() {
             this.errors = {}
-            httpClient.post('/send', this.mensagem).catch(error => {
-                if (error.response.status === 442) {
-                    this.errors = error.response.data.errors || {}
-                }
-            })
+            service.sendMessage(this.mensagem)
         },
         limpar() {
             this.mensagem.nome = ''
